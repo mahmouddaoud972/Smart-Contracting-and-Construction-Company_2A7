@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>map.qrc</file>
+    </qresource>
+</RCC>
+*
