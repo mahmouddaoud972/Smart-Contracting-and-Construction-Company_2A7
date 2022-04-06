@@ -7,7 +7,7 @@ class Fournisseur
 {
 public:
     Fournisseur();
-    Fournisseur(int, QString, QString, QString, QString, QString, QString);
+    Fournisseur(int, QString, QString, QString, QString, QString, QString,QString,QString);
     int getidf();
     QString getadressef();
     QString getnumtelf();
@@ -15,11 +15,14 @@ public:
     QString gettypef();
     QString getnomf();
     QString getprenomf();
+    QString getlat();
+    QString getlong();
     bool ajouter();
     bool supprimer(QString);
     bool modifier(QString);
     void recuperer(QString);
     QSqlQueryModel * afficher();
+    QSqlQueryModel *trier(QString x);
 
     void setidf(int);
     void setadressef(QString);
@@ -28,11 +31,13 @@ public:
     void settypef(QString);
     void setnomf(QString);
     void setprenomf(QString);
+    void setlat(QString);
+    void setlong(QString);
 
 
 private:
     int id_f;
-    QString adresse_f, numtel_f, mail_f, nom_f, prenom_f, type_f ;
+    QString adresse_f, numtel_f, mail_f, nom_f, prenom_f, type_f,lat_f,long_f ;
 
 };
 

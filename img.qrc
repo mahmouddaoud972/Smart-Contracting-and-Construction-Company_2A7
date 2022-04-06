@@ -5,5 +5,8 @@
         <file>images/delete-property-64.png</file>
         <file>images/edit-property-64.png</file>
         <file>images/pages-3-64.png</file>
+        <file>images/bookmark-2-64.png</file>
+        <file>images/inbox-8-64.png</file>
+        <file>images/map-marker-64.png</file>
     </qresource>
 </RCC>
