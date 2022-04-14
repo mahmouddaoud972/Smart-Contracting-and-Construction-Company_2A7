@@ -21,6 +21,8 @@ public:
     bool supprimer(QString);
     bool modifier(QString);
     void recuperer(QString);
+    QSqlQueryModel * rechercher(QString, QString);
+
     QSqlQueryModel * afficher();
     QSqlQueryModel *trier(QString x);
 

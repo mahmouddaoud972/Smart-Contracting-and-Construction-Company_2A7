@@ -18,8 +18,9 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    ui->view_histo->setModel(hist->Afficher());
     QPixmap bkgnd("E:/Projet/fournisseur/images/screen.jpg");
-        bkgnd = bkgnd.scaled(1327,749);
+        bkgnd = bkgnd.scaled(1366,749);
         QPalette palette;
         palette.setBrush(QPalette::Background, bkgnd);
         this->setPalette(palette);
@@ -58,12 +59,14 @@ void MainWindow::on_pb_ajouter_clicked()
     Fournisseur F (id_f,adressse_f,numtel_f,mail_f,type_f,nom_f,prenom_f,lat_f,long_f);
     bool test=F.ajouter();
     if (test)
-    { QSystemTrayIcon *notifyIcon = new QSystemTrayIcon;
-        notifyIcon->show();
-       notifyIcon->showMessage("Ajouter ","Ajouter succèses",QSystemTrayIcon::Information,15000);
+    {
         QMessageBox::information(nullptr, QObject::tr("OK"),
                     QObject::tr("Ajout effectué. \n"
                                 "Click Cancel to exit."), QMessageBox::Cancel);
+        QString operation="ajout";
+        histo h(operation);
+        h.Ajouter();
+        ui->view_histo->setModel(h.Afficher());
 
 }
     else
@@ -142,13 +145,24 @@ sel=ui->tv_afficher->model()->data(index).toString();
 void MainWindow::on_pb_afficher_clicked()
 {
 show_tables();
+histo h;
+ui->view_histo->setModel(h.Afficher());
+
 }
 
 
 void MainWindow::on_pb_supprimer_clicked()
 {
     Fournisseur f;
-  f.supprimer(ui->le_supp->text());
+ bool test= f.supprimer(ui->le_supp->text());
+ if (test){
+     QString operation ="suppression";
+     histo H (operation);
+     H.Ajouter();
+     ui->view_histo->setModel(hist->Afficher());
+
+
+ }
 
   ui->le_supp->clear();
 
@@ -174,7 +188,13 @@ void MainWindow::on_pb_modifier_clicked()
 
       //modifier
     Fournisseur F (id_f,adressse_f,numtel_f,mail_f,type_f,nom_f,prenom_f,lat_f,long_f);
-      F.modifier(id_m);
+     bool test= F.modifier(id_m);
+     if(test){
+         QString operation="Modification";
+         histo H (operation);
+         H.Ajouter();
+      ui->view_histo->setModel(H.Afficher());
+     }
 
 
   //refresh du tableau (affichage)
@@ -231,7 +251,7 @@ void MainWindow::on_tv_afficher_activated(const QModelIndex &index)
 void MainWindow::on_le_idf_editingFinished()
 {
     int val=ui->le_idf->text().toInt();
-    if(val>0){
+    if(val<=0){
         QMessageBox::information(nullptr, QObject::tr("not OK"),
                     QObject::tr("idnot valid. \n"
                                 "Click Cancel to exit."), QMessageBox::Cancel);
@@ -316,9 +336,14 @@ void MainWindow::on_pb_mail_clicked()
 }
 
 
-void MainWindow::on_pb_histo_clicked()
-{
-    hist=  new histo();
-    hist->Afficher();
 
+
+void MainWindow::on_rech_adresse_textChanged(const QString &arg1)
+{
+   QString type= ui->type->text();
+   QString adresse= ui->rech_adresse->text();
+   Fournisseur F;
+   F.rechercher(type,adresse);
 }
+
+

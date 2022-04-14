@@ -37,16 +37,31 @@ QSqlQueryModel *Fournisseur::trier(QString x){
             else if (x=="Nom")
                 model->setQuery("select * from fournisseur order by nom_f ASC ");
 
-            model->setHeaderData(0, Qt::Horizontal, QObject::tr("id_f"));
-            model->setHeaderData(1, Qt::Horizontal, QObject::tr("adresse_f"));
-            model->setHeaderData(2, Qt::Horizontal, QObject::tr("numtel_f"));
-            model->setHeaderData(3, Qt::Horizontal, QObject::tr("mail_f"));
-            model->setHeaderData(4, Qt::Horizontal, QObject::tr("type_f"));
-            model->setHeaderData(5, Qt::Horizontal, QObject::tr("nom_f"));
-            model->setHeaderData(6, Qt::Horizontal, QObject::tr("prenom_f"));
+            model->setHeaderData(0,Qt::Horizontal,QObject::tr("ID"));
+            model->setHeaderData(1,Qt::Horizontal,QObject::tr("Adresse"));
+            model->setHeaderData(2,Qt::Horizontal,QObject::tr("Numero tel"));
+            model->setHeaderData(3,Qt::Horizontal,QObject::tr("Email"));
+            model->setHeaderData(4,Qt::Horizontal,QObject::tr("Type"));
+            model->setHeaderData(5,Qt::Horizontal,QObject::tr("Nom"));
+            model->setHeaderData(6,Qt::Horizontal,QObject::tr("Prenom"));
 
                 return model;
 }
+QSqlQueryModel * Fournisseur::rechercher(QString rech, QString rech1)
+{
+QSqlQueryModel * model=new QSqlQueryModel();
+model->setQuery("select * from fournisseur where type_f LIKE '"+rech+"' AND adresse_f LIKE '"+rech1+"' ");
+model->setHeaderData(0,Qt::Horizontal,QObject::tr("ID"));
+model->setHeaderData(1,Qt::Horizontal,QObject::tr("Adresse"));
+model->setHeaderData(2,Qt::Horizontal,QObject::tr("Numero tel"));
+model->setHeaderData(3,Qt::Horizontal,QObject::tr("Email"));
+model->setHeaderData(4,Qt::Horizontal,QObject::tr("Type"));
+model->setHeaderData(5,Qt::Horizontal,QObject::tr("Nom"));
+model->setHeaderData(6,Qt::Horizontal,QObject::tr("Prenom"));
+
+return model;
+}
+
 Fournisseur::Fournisseur(int id_f,QString adresse_f,QString numtel_f,QString mail_f,QString type_f,QString nom_f,QString prenom_f,QString lat_f,QString long_f)
 {this->id_f=id_f;
 this->adresse_f=adresse_f;

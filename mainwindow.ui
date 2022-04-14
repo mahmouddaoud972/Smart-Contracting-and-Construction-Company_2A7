@@ -25,13 +25,13 @@ border-radius:15px;
 }</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QTabWidget" name="tabWidget">
+   <widget class="QTabWidget" name="histo">
     <property name="geometry">
      <rect>
-      <x>230</x>
-      <y>80</y>
-      <width>921</width>
-      <height>551</height>
+      <x>140</x>
+      <y>40</y>
+      <width>1121</width>
+      <height>611</height>
      </rect>
     </property>
     <property name="autoFillBackground">
@@ -143,7 +143,7 @@ border-color:transparent;</string>
         <x>20</x>
         <y>270</y>
         <width>701</width>
-        <height>231</height>
+        <height>301</height>
        </rect>
       </property>
       <property name="title">
@@ -458,8 +458,8 @@ border-color:transparent;
        <rect>
         <x>730</x>
         <y>270</y>
-        <width>151</width>
-        <height>231</height>
+        <width>201</width>
+        <height>301</height>
        </rect>
       </property>
       <property name="title">
@@ -617,6 +617,65 @@ border-color:transparent;
         <string>Recherche</string>
        </property>
       </widget>
+      <widget class="QLabel" name="label_14">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>210</y>
+         <width>151</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Recherche selon Type et Adresse</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="type">
+       <property name="geometry">
+        <rect>
+         <x>70</x>
+         <y>240</y>
+         <width>111</width>
+         <height>20</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_15">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>240</y>
+         <width>41</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Type :</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_16">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>270</y>
+         <width>51</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Adresse :</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="rech_adresse">
+       <property name="geometry">
+        <rect>
+         <x>70</x>
+         <y>270</y>
+         <width>113</width>
+         <height>20</height>
+        </rect>
+       </property>
+      </widget>
      </widget>
      <widget class="QPushButton" name="pb_map">
       <property name="geometry">
@@ -688,36 +747,6 @@ border-color:transparent;</string>
        </rect>
       </property>
      </widget>
-     <widget class="QPushButton" name="pb_histo">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>110</y>
-        <width>61</width>
-        <height>61</height>
-       </rect>
-      </property>
-      <property name="toolTip">
-       <string>Historique</string>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: transparent;
-border-color:transparent;</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="icon">
-       <iconset resource="img.qrc">
-        <normaloff>:/new/prefix1/images/bookmark-2-64.png</normaloff>:/new/prefix1/images/bookmark-2-64.png</iconset>
-      </property>
-      <property name="iconSize">
-       <size>
-        <width>35</width>
-        <height>35</height>
-       </size>
-      </property>
-     </widget>
      <zorder>le_dest</zorder>
      <zorder>le_supp</zorder>
      <zorder>tv_afficher</zorder>
@@ -727,7 +756,21 @@ border-color:transparent;</string>
      <zorder>groupBox_2</zorder>
      <zorder>pb_map</zorder>
      <zorder>pb_mail</zorder>
-     <zorder>pb_histo</zorder>
+    </widget>
+    <widget class="QWidget" name="tab_2">
+     <attribute name="title">
+      <string>Historique</string>
+     </attribute>
+     <widget class="QTableView" name="view_histo">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>50</y>
+        <width>601</width>
+        <height>391</height>
+       </rect>
+      </property>
+     </widget>
     </widget>
    </widget>
   </widget>

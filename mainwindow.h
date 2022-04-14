@@ -65,6 +65,10 @@ private slots:
 
     void on_pb_histo_clicked();
 
+    void on_adresse_textChanged(const QString &arg1);
+
+    void on_rech_adresse_textChanged(const QString &arg1);
+
 private:
     Ui::MainWindow *ui;
     Map *map;
