@@ -8,7 +8,7 @@
 #include "map.h"
 #include "mail.h"
 #include "histo.h"
-
+//
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -68,6 +68,14 @@ private slots:
     void on_adresse_textChanged(const QString &arg1);
 
     void on_rech_adresse_textChanged(const QString &arg1);
+
+    void on_pb_histo_released();
+
+    void on_rech_adresse_textEdited(const QString &arg1);
+
+    void on_pb_histo_clicked(bool checked);
+
+    void on_pb_histo_toggled(bool checked);
 
 private:
     Ui::MainWindow *ui;

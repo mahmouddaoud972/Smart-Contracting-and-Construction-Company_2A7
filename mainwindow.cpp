@@ -145,8 +145,6 @@ sel=ui->tv_afficher->model()->data(index).toString();
 void MainWindow::on_pb_afficher_clicked()
 {
 show_tables();
-histo h;
-ui->view_histo->setModel(h.Afficher());
 
 }
 
@@ -311,7 +309,6 @@ void MainWindow::on_tri_currentIndexChanged(const QString &arg1)
 
 
 
-      //modifier
     Fournisseur F (id_f,adressse_f,numtel_f,mail_f,type_f,nom_f,prenom_f,lat_f,long_f);
     ui->tv_afficher->setModel(F.trier(arg1));
 
@@ -340,10 +337,24 @@ void MainWindow::on_pb_mail_clicked()
 
 void MainWindow::on_rech_adresse_textChanged(const QString &arg1)
 {
+
    QString type= ui->type->text();
    QString adresse= ui->rech_adresse->text();
    Fournisseur F;
-   F.rechercher(type,adresse);
+   ui->tv_afficher->setModel(F.rechercher(type,arg1));
+
+
+
 }
+
+
+
+void MainWindow::on_pb_histo_clicked()
+{
+    histo h;
+    ui->view_histo->setModel(h.Afficher());
+
+}
+
 
 

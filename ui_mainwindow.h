@@ -75,8 +75,9 @@ public:
     QPushButton *pb_map;
     QPushButton *pb_mail;
     QLineEdit *le_dest;
-    QWidget *tab_2;
     QTableView *view_histo;
+    QLabel *label_17;
+    QPushButton *pb_histo;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -98,7 +99,7 @@ public:
         centralwidget->setObjectName(QStringLiteral("centralwidget"));
         histo = new QTabWidget(centralwidget);
         histo->setObjectName(QStringLiteral("histo"));
-        histo->setGeometry(QRect(140, 40, 1121, 611));
+        histo->setGeometry(QRect(190, 40, 991, 611));
         histo->setAutoFillBackground(false);
         histo->setStyleSheet(QStringLiteral(""));
         histo->setTabBarAutoHide(false);
@@ -106,11 +107,11 @@ public:
         tab->setObjectName(QStringLiteral("tab"));
         tv_afficher = new QTableView(tab);
         tv_afficher->setObjectName(QStringLiteral("tv_afficher"));
-        tv_afficher->setGeometry(QRect(110, 20, 691, 241));
+        tv_afficher->setGeometry(QRect(110, 10, 611, 311));
         tv_afficher->setStyleSheet(QStringLiteral("background-color:white;"));
         pb_afficher = new QPushButton(tab);
         pb_afficher->setObjectName(QStringLiteral("pb_afficher"));
-        pb_afficher->setGeometry(QRect(830, 30, 61, 61));
+        pb_afficher->setGeometry(QRect(30, 30, 61, 61));
         pb_afficher->setStyleSheet(QLatin1String("background-color: transparent;\n"
 "border-color:transparent;"));
         QIcon icon;
@@ -119,7 +120,7 @@ public:
         pb_afficher->setIconSize(QSize(35, 35));
         pb_supprimer = new QPushButton(tab);
         pb_supprimer->setObjectName(QStringLiteral("pb_supprimer"));
-        pb_supprimer->setGeometry(QRect(830, 110, 61, 61));
+        pb_supprimer->setGeometry(QRect(30, 100, 61, 61));
         pb_supprimer->setStyleSheet(QLatin1String("background-color: transparent;\n"
 "border-color:transparent;"));
         QIcon icon1;
@@ -128,10 +129,10 @@ public:
         pb_supprimer->setIconSize(QSize(35, 35));
         le_supp = new QLineEdit(tab);
         le_supp->setObjectName(QStringLiteral("le_supp"));
-        le_supp->setGeometry(QRect(630, 190, 113, 20));
+        le_supp->setGeometry(QRect(530, 180, 113, 20));
         groupBox = new QGroupBox(tab);
         groupBox->setObjectName(QStringLiteral("groupBox"));
-        groupBox->setGeometry(QRect(20, 270, 701, 301));
+        groupBox->setGeometry(QRect(20, 330, 701, 241));
         label = new QLabel(groupBox);
         label->setObjectName(QStringLiteral("label"));
         label->setGeometry(QRect(30, 50, 47, 14));
@@ -207,7 +208,7 @@ public:
         le_long->setGeometry(QRect(560, 120, 111, 31));
         groupBox_2 = new QGroupBox(tab);
         groupBox_2->setObjectName(QStringLiteral("groupBox_2"));
-        groupBox_2->setGeometry(QRect(730, 270, 201, 301));
+        groupBox_2->setGeometry(QRect(750, 270, 211, 301));
         label_8 = new QLabel(groupBox_2);
         label_8->setObjectName(QStringLiteral("label_8"));
         label_8->setGeometry(QRect(10, 60, 41, 20));
@@ -231,7 +232,7 @@ public:
         label_11->setGeometry(QRect(10, 30, 61, 16));
         label_14 = new QLabel(groupBox_2);
         label_14->setObjectName(QStringLiteral("label_14"));
-        label_14->setGeometry(QRect(10, 210, 151, 16));
+        label_14->setGeometry(QRect(10, 210, 171, 16));
         type = new QLineEdit(groupBox_2);
         type->setObjectName(QStringLiteral("type"));
         type->setGeometry(QRect(70, 240, 111, 20));
@@ -246,7 +247,7 @@ public:
         rech_adresse->setGeometry(QRect(70, 270, 113, 20));
         pb_map = new QPushButton(tab);
         pb_map->setObjectName(QStringLiteral("pb_map"));
-        pb_map->setGeometry(QRect(830, 190, 61, 61));
+        pb_map->setGeometry(QRect(30, 170, 61, 61));
         pb_map->setStyleSheet(QLatin1String("background-color: transparent;\n"
 "border-color:transparent;"));
         QIcon icon4;
@@ -255,7 +256,7 @@ public:
         pb_map->setIconSize(QSize(35, 35));
         pb_mail = new QPushButton(tab);
         pb_mail->setObjectName(QStringLiteral("pb_mail"));
-        pb_mail->setGeometry(QRect(20, 30, 61, 61));
+        pb_mail->setGeometry(QRect(30, 240, 61, 61));
         pb_mail->setStyleSheet(QLatin1String("background-color: transparent;\n"
 "border-color:transparent;"));
         QIcon icon5;
@@ -265,9 +266,27 @@ public:
         le_dest = new QLineEdit(tab);
         le_dest->setObjectName(QStringLiteral("le_dest"));
         le_dest->setGeometry(QRect(170, 100, 91, 20));
+        view_histo = new QTableView(tab);
+        view_histo->setObjectName(QStringLiteral("view_histo"));
+        view_histo->setGeometry(QRect(740, 60, 231, 161));
+        view_histo->setStyleSheet(QStringLiteral("background-color:white;"));
+        label_17 = new QLabel(tab);
+        label_17->setObjectName(QStringLiteral("label_17"));
+        label_17->setGeometry(QRect(800, 30, 111, 31));
+        label_17->setStyleSheet(QStringLiteral("font: 16pt;"));
+        pb_histo = new QPushButton(tab);
+        pb_histo->setObjectName(QStringLiteral("pb_histo"));
+        pb_histo->setGeometry(QRect(820, 220, 61, 61));
+        pb_histo->setStyleSheet(QLatin1String("background-color: transparent;\n"
+"border-color:transparent;"));
         QIcon icon6;
-        icon6.addFile(QStringLiteral(":/new/prefix1/img/fournisseur-icone-png-removebg-preview.png"), QSize(), QIcon::Normal, QIcon::Off);
-        histo->addTab(tab, icon6, QString());
+        icon6.addFile(QStringLiteral(":/new/prefix1/images/bookmark-2-64.png"), QSize(), QIcon::Normal, QIcon::Off);
+        pb_histo->setIcon(icon6);
+        pb_histo->setIconSize(QSize(35, 35));
+        QIcon icon7;
+        icon7.addFile(QStringLiteral(":/new/prefix1/img/fournisseur-icone-png-removebg-preview.png"), QSize(), QIcon::Normal, QIcon::Off);
+        histo->addTab(tab, icon7, QString());
+        pb_histo->raise();
         le_dest->raise();
         le_supp->raise();
         tv_afficher->raise();
@@ -277,12 +296,8 @@ public:
         groupBox_2->raise();
         pb_map->raise();
         pb_mail->raise();
-        tab_2 = new QWidget();
-        tab_2->setObjectName(QStringLiteral("tab_2"));
-        view_histo = new QTableView(tab_2);
-        view_histo->setObjectName(QStringLiteral("view_histo"));
-        view_histo->setGeometry(QRect(200, 50, 601, 391));
-        histo->addTab(tab_2, QString());
+        view_histo->raise();
+        label_17->raise();
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QStringLiteral("menubar"));
@@ -375,8 +390,12 @@ public:
         pb_mail->setToolTip(QApplication::translate("MainWindow", "Send Email", Q_NULLPTR));
 #endif // QT_NO_TOOLTIP
         pb_mail->setText(QString());
+        label_17->setText(QApplication::translate("MainWindow", "Historique", Q_NULLPTR));
+#ifndef QT_NO_TOOLTIP
+        pb_histo->setToolTip(QApplication::translate("MainWindow", "Historique", Q_NULLPTR));
+#endif // QT_NO_TOOLTIP
+        pb_histo->setText(QString());
         histo->setTabText(histo->indexOf(tab), QApplication::translate("MainWindow", "Fournisseur", Q_NULLPTR));
-        histo->setTabText(histo->indexOf(tab_2), QApplication::translate("MainWindow", "Historique", Q_NULLPTR));
     } // retranslateUi
 
 };
