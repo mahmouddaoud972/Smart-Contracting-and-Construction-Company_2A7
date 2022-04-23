@@ -1,0 +1,346 @@
+/*Copyright (c) DevSec Studio. All rights reserved.
+
+MIT License
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED AS IS, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+*/
+
+*{
+font-family:century gothic;
+}
+
+/*-----QWidget-----*/
+QFrame
+{
+        background-color: #333;
+        color: #000000;
+        border-color: #000000;
+
+
+}
+
+
+/*-----QLabel-----*/
+QLabel
+{
+        color: white;
+
+
+
+}
+/*-----QTabWidget-----*/
+QTabBar::tab
+{
+        font-size: 8pt;
+        font-weight: bold;
+        width: 80px;
+    border: 1px solid #444;
+    border-bottom-style: none;
+    border-top-style: none;
+    background-color: #333;
+    padding-top: 3px;
+    padding-bottom: 2px;
+    margin-right: -1px;
+
+}
+
+QTabWidget::pane
+{
+    border: 1px solid qlineargradient(spread:repeat, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(254, 171, 66, 255),stop:1 rgba(255, 153, 0, 255));
+    top: 1px;
+
+}
+
+QTabBar::tab:last
+{
+    margin-right: 0;
+
+}
+
+QTabBar::tab:first:!selected
+{
+        margin-left: 0px;
+
+}
+
+QTabBar::tab:!selected
+{
+    color: #fff;
+    border-bottom-style: solid;
+    margin-top: 3px;
+    background-color: QLinearGradient(x1:0, y1:0, x2:0, y2:1, stop:1 #212121, stop:.4 #343434);
+
+}
+
+QTabBar::tab:selected
+{
+        background-color: qlineargradient(spread:repeat, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(254, 171, 66, 255),stop:1 rgba(255, 153, 0, 255));
+        color: #000;
+    margin-bottom: 0px;
+
+}
+
+QTabBar::tab:!selected:hover
+{
+    background-color: QLinearGradient(x1:0, y1:0, x2:0, y2:1, stop:1 #212121, stop:0.4 #343434, stop:0.2 #343434, stop:0.1 #ffaa00);
+
+}
+
+/*-----QPushButton-----*/
+QPushButton
+{
+        background-color: orange;
+        color: #fff;
+        font-weight: bold;
+        border-style: solid;
+        border-width: 1px;
+        border-radius: 17px;
+        border-color: #f0742f;
+        padding: 10px;
+
+}
+
+
+QPushButton::hover
+{
+        background-color: #fc7c11;
+        color: #fff;
+
+}
+
+
+QPushButton::pressed
+{
+        background-color: #ff6b35;
+        color: #fff;
+
+}
+
+
+/*-----QToolButton-----*/
+
+
+
+
+/*-----QLineEdit-----*/
+QLineEdit{
+        background-color: orange;
+        color: black;
+        font-weight: bold;
+        border-style: solid;
+        border-width: 2px;
+        border-top: 0px;
+        border-left: 0px;
+        border-right: 0px;
+        border-color: #b9b9bb;
+        padding: 2px;
+
+}
+
+
+/*-----QCheckBox-----*/
+QCheckBox
+{
+        background-color: transparent;
+        color: #b9b9bb;
+        font-weight: bold;
+
+}
+
+
+QCheckBox::indicator
+{
+    color: #b1b1b1;
+    background-color: #00111d;
+    border: 1px solid #f0742f;
+    width: 12px;
+    height: 12px;
+
+}
+
+
+QCheckBox::indicator:checked
+{
+    image:url("./ressources/check.png"); /*To replace*/
+        background-color: #1f2b2b;
+    border: 1px solid #f0742f;
+
+}
+
+
+QCheckBox::indicator:unchecked:hover
+{
+    border: 1px solid #f0742f;
+
+}
+
+
+QCheckBox::disabled
+{
+        color: #656565;
+
+}
+
+
+QCheckBox::indicator:disabled
+{
+        background-color: #656565;
+        color: #656565;
+    border: 1px solid #656565;
+
+}
+/*-----QTableView & QTableWidget-----*/
+QTableView
+{
+    background-color: #242526;
+    border: 1px solid #32414B;
+    color: black;
+    gridline-color: #353635;
+    outline : 0;
+}
+
+QTableView::item:hover
+{
+    background-color: #dd571c;
+    color: black;
+}
+
+QTableView::item:selected
+{
+    background-color: #ed820e;
+    border: 2px solid #ed820e;
+    color: black;
+}
+
+QTableCornerButton::section
+{
+    background-color: #505050;
+    color: white;
+}
+
+QHeaderView
+{
+    background-color: #505050;
+    color: white;
+    border-radius: 0px;
+    text-align: left;
+
+}
+
+QHeaderView::section
+{
+    background-color: #505050;
+    color: white;
+    border-radius: 0px;
+    text-align: left;
+        padding: 3px;
+}
+
+QHeaderView::section:checked
+{
+    color: #000000;
+    background-color: #ed820e;
+}
+
+QHeaderView::section::vertical::first,
+QHeaderView::section::vertical::only-one
+{
+    border-top: 1px solid #353635;
+}
+
+QHeaderView::section::vertical
+{
+    border-top: 1px solid #353635;
+}
+
+QHeaderView::section::horizontal::first,
+QHeaderView::section::horizontal::only-one
+{
+    border-left: 1px solid #353635;
+}
+
+QHeaderView::section::horizontal
+{
+    border-left: 1px solid #353635;
+}
+/*-----QComboBox-----*/
+QComboBox
+{
+    background-color: #a9a9aa;
+    border: 1px solid;
+    padding-left: 6px;
+    color: #000;
+    height: 20px;
+
+}
+
+
+QComboBox::disabled
+{
+        background-color: #404040;
+        color: #656565;
+        border-color: #051a39;
+
+}
+
+
+QComboBox:hover
+{
+    background-color: #f6f6f6;
+
+}
+
+
+QComboBox:on
+{
+    background-color: #f8f6f0;
+
+}
+
+
+QComboBox QAbstractItemView
+{
+    background-color: #383838;
+    color: #ffffff;
+    border: 1px solid black;
+    selection-background-color: #ed820e;
+    selection-color: #ffffff;
+    outline: 0;
+
+}
+
+
+QComboBox::drop-down
+{
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 15px;
+
+}
+
+
+QComboBox::down-arrow
+{
+        background-color: #383838;
+    image: url(://arrow-down.png) 16px 16px;
+    width: 18px;
+    height: 18px;
+        border-left: 1px solid black;
+
+}
+Écrire à Mhamed Ben Hassine
