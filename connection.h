@@ -10,6 +10,7 @@ public:
     QSqlDatabase db;
     Connection();
     bool createconnect();
-    void closeConnection();};
+    void closeConnection();
+};
 
 #endif // CONNECTION_H

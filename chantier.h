@@ -8,14 +8,14 @@ class chantier
 {
 public:
     chantier();
-    chantier(int,QString,int,int,float,float,QString);
+    chantier(int,QString,QString,QString,QString,QString,QString);
 
     int getid_c();
     QString getadresse_c ();
-    int getnbre_chambre();
-    int getnbre_etage();
-    float getsurface_c();
-    float getbudget_c();
+    QString getnbre_chambre();
+    QString getnbre_etage();
+    QString getsurface_c();
+    QString getbudget_c();
     QString getjardin();
 
     bool ajouter();
@@ -26,17 +26,20 @@ public:
 
     void setid_c(int);
     void setadresse_c(QString);
-    void setnbre_chambre(int);
-    void setnbre_etage(int);
-    void setsurface_c(float);
-    void setbudget_c(float);
+    void setnbre_chambre(QString);
+    void setnbre_etage(QString);
+    void setsurface_c(QString);
+    void setbudget_c(QString);
     void setjardin(QString);
+    QSqlQueryModel * recherche(QString,QString);
+
+    QSqlQueryModel *trier(QString x);
 
 private:
-    int id_c,nbre_chambre,nbre_etage;
-    float surface_c,budget_c;
+    int id_c;
+    QString surface_c,budget_c,nbre_chambre,nbre_etage;
     QString adresse_c,jardin;
 
 };
-
 #endif // CHANTIER_H
+

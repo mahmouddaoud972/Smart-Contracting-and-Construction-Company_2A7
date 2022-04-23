@@ -1,8 +1,23 @@
 <RCC>
     <qresource prefix="/new/prefix1">
         <file>images/add-list-64.png</file>
+        <file>images/bookmark-2-64.png</file>
+        <file>images/brick-icon-11-removebg-preview.png</file>
+        <file>images/chantier.png</file>
         <file>images/delete-property-64.png</file>
         <file>images/edit-property-64.png</file>
+        <file>images/empp (1).png</file>
+        <file>images/empp.png</file>
+        <file>images/fournisseur-icone-png-removebg-preview.png</file>
+        <file>images/inbox-8-64.png</file>
+        <file>images/k.jpg</file>
+        <file>images/logo.png</file>
+        <file>images/map-marker-64.png</file>
         <file>images/pages-3-64.png</file>
+        <file>images/partenaire.png</file>
+        <file>images/profil.png</file>
+        <file>images/screen.jpg</file>
+        <file>images/test.jpg</file>
+        <file>images/agenda-64.png</file>
     </qresource>
 </RCC>

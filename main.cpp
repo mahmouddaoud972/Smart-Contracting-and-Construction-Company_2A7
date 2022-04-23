@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     //style sheet
-        QFile styleSheetFile("C:/Users/Mahmoud/Desktop/mahmoudd/Hookmark.qss");
+        QFile styleSheetFile("C:/Users/Mahmoud/Desktop/chance/chantier/Hookmark.qss");
         styleSheetFile.open(QFile::ReadOnly);
         QString styleSheet = QLatin1String(styleSheetFile.readAll());
         a.setStyleSheet(styleSheet);

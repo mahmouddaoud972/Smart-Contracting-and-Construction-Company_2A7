@@ -4,12 +4,12 @@ Connection::Connection(){}
 
 bool Connection::createconnect()
 {
+    bool test=false;
 
-db = QSqlDatabase::addDatabase("QODBC");
-bool test=false;
-db.setDatabaseName("Projet2A");
-db.setUserName("mamoud");
-db.setPassword("mamoud");
+QSqlDatabase db = QSqlDatabase::addDatabase("QODBC");
+db.setDatabaseName("Source_projet2A");
+db.setUserName("mahmoud");
+db.setPassword("mahmoud");
 
 if (db.open()) test=true;
 
